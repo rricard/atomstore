@@ -37,7 +37,7 @@ export class Atom {
     this._lock = true;
 
     var updated = false;
-    if(this.deref() === oldval) {
+    if(this.deref().equals(oldval)) {
       if(newval instanceof Iterable) {
         this._ref = newval;
       } else {
@@ -57,7 +57,9 @@ export class Atom {
    * @return The swapped new value
    */
   swap(f) {
-    while(!this.compareAndSet(this._ref, f.apply(this._ref, arguments))) {}
+    var args = Array.prototype.slice.call(arguments, 1);
+    // TODO: Make it better too
+    while(!this.compareAndSet(this._ref, f.apply(this._ref, args))) {}
     return this._ref;
   }
 }
