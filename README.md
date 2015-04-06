@@ -8,7 +8,7 @@ The missing piece for an immutable flux application architecture
 
 This piece of architecture is intended to be used with the [Facebook Flux's](https://github.com/facebook/flux) [own dispatcher](https://github.com/facebook/flux/blob/master/src/Dispatcher.js). It solves the problem of having a mutable store when using [Immutable.js](https://github.com/facebook/immutable-js).
 
-`Atom` is a class behaving like [Clojure's Atoms](http://clojure.org/atoms) (but it's not thread-safe for now on threaded js environments). Its goal is to ensure that you can mutate safely your store and dereference immutable objects from it.
+`Atom` is a class behaving like [Clojure's Atoms](http://clojure.org/atoms) (but it's not thread-safe for now on threaded js environments for example: web workers). Its goal is to ensure that you can mutate safely your store and dereference immutable objects from it.
 
 ## Install
 
