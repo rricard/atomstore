@@ -2,10 +2,10 @@
 
 import { Iterable, fromJS } from "immutable";
 
-export class AtomStore {
+export class Atom {
   /**
    * @constructor
-   * Constructs a new AtomStore from an immutable object.
+   * Constructs a new Atom from an immutable object.
    * If the object is mutable, it will be converted automatically to an Immutable.js object.
    */
   constructor(immutableObject) {
