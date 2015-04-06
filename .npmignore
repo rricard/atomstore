@@ -1,4 +1,8 @@
 node_modules
 __tests__
 src
+gulpfile.js
 npm-debug.log
+.git
+.gitignore
+.jshintrc

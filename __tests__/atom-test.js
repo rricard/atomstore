@@ -1,3 +1,5 @@
+"use strict";
+
 jest.dontMock('../dist/atomstore');
 jest.dontMock('immutable');
 
@@ -32,9 +34,9 @@ describe("Atom", function() {
   });
 
   it("should swap as soon as possible", function() {
-    function assoc(k, v) {
+    var assoc = function(k, v) {
       return this.set(k, v);
-    }
+    };
     var atom = new Atom({a: "b"});
     atom.swap(assoc, "b", "c");
     atom.swap(assoc, "c", "d");

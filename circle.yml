@@ -1,0 +1,4 @@
+test:
+  override:
+   - npm test
+   - npm run-script lint

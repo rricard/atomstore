@@ -1,0 +1,5 @@
+{
+  "globalstrict": true,
+  "esnext": true,
+  "predef": [ "jest", "require", "describe", "it", "expect" ]
+}

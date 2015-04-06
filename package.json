@@ -2,8 +2,9 @@
   "name": "atomstore",
   "version": "0.1.0",
   "description": "The missing piece for an immutable flux application architecture",
-  "main": "src/",
+  "main": "dist/atomstore.js",
   "scripts": {
+    "lint": "jshint src/ __tests__/",
     "pretest": "gulp",
     "prepublish": "gulp",
     "test": "jest"
@@ -32,6 +33,7 @@
     "gulp-babel": "^5.0.0",
     "gulp-concat": "^2.5.2",
     "gulp-sourcemaps": "^1.5.1",
-    "jest-cli": "^0.4.0"
+    "jest-cli": "^0.4.0",
+    "jshint": "^2.6.3"
   }
 }
