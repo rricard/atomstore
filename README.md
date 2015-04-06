@@ -34,7 +34,8 @@ var CityStore = new Atom({city: null});
 var FlightPriceStore = new Atom({price: null});
 
 // Define the swap function. In this example: a set key function for immutable maps.
-// Keep in mind that you get an immutable object in the `this` and you have to return an another immutable
+// Keep in mind that you get an immutable object in the `this`
+// and you have to return an another immutable
 function assoc(k, v) {
   return this.set(k, v);
 }
