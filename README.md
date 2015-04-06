@@ -68,7 +68,8 @@ FlightPriceStore.dispatchToken = flightDispatcher.register(function(payload) {
     case 'country-update':
     case 'city-update':
       flightDispatcher.waitFor([CityStore.dispatchToken]);
-      var newPrice = getFlightPriceStore(CountryStore.deref().get('country'), CityStore.deref().get('city'))
+      var newPrice = getFlightPriceStore(CountryStore.deref().get('country'),
+                                         CityStore.deref().get('city'));
       FlightPriceStore.swap(assoc, "price", newPrice);
       break;
   }
