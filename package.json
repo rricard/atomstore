@@ -1,0 +1,31 @@
+{
+  "name": "atomstore",
+  "version": "0.1.0",
+  "description": "The missing piece for an immutable flux application architecture",
+  "main": "src/",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rricard/atomstore.git"
+  },
+  "keywords": [
+    "flux",
+    "atom",
+    "immutable"
+  ],
+  "author": "Robin Ricard <ricard.robin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rricard/atomstore/issues"
+  },
+  "homepage": "https://github.com/rricard/atomstore",
+  "dependencies": {
+    "flux": "^2.0.1",
+    "immutable": "^3.7.1"
+  },
+  "devDependencies": {
+    "jest-cli": "^0.4.0"
+  }
+}
