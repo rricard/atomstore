@@ -28,3 +28,6 @@ node_modules
 
 # Webstorm/IntelliJ project files
 .idea/
+
+# Compiled ES6
+dist/
