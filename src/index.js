@@ -1,6 +1,6 @@
 "use strict";
 
-import { Iterable, fromJS, List } from "immutable";
+import Immutable from "immutable";
 
 export class Atom {
   /**
@@ -9,13 +9,13 @@ export class Atom {
    * If the object is mutable, it will be converted automatically to an Immutable.js object.
    */
   constructor(immutableObject) {
-    if(immutableObject instanceof Iterable) {
+    if(immutableObject instanceof Immutable.Iterable) {
       this._ref = immutableObject;
     } else {
-      this._ref = fromJS(immutableObject);
+      this._ref = Immutable.fromJS(immutableObject);
     }
     this._lock = false;
-    this._listeners = List([]);
+    this._listeners = Immutable.List([]);
   }
 
   /**
@@ -30,7 +30,7 @@ export class Atom {
    * @param listener A callback function
    */
   addChangeListener(listener) {
-    this._listeners = this.listeners.push(listener)
+    this._listeners = this.listeners.push(listener);
   }
 
   /**
@@ -47,10 +47,10 @@ export class Atom {
 
     var updated = false;
     if(this.deref().equals(oldval)) {
-      if(newval instanceof Iterable) {
+      if(newval instanceof Immutable.Iterable) {
         this._ref = newval;
       } else {
-        this._ref = fromJS(newval);
+        this._ref = Immutable.fromJS(newval);
       }
       updated = true;
     }
