@@ -30,7 +30,7 @@ export class Atom {
    * @param listener A callback function
    */
   addChangeListener(listener) {
-    this._listeners = this.listeners.push(listener);
+    this._listeners = this._listeners.push(listener);
   }
 
   /**
