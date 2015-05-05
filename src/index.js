@@ -1,6 +1,6 @@
 "use strict";
 
-import { Iterable, fromJS } from "immutable";
+import { Iterable, fromJS, List } from "immutable";
 
 export class Atom {
   /**
@@ -15,6 +15,7 @@ export class Atom {
       this._ref = fromJS(immutableObject);
     }
     this._lock = false;
+    this._listeners = List([]);
   }
 
   /**
@@ -22,6 +23,14 @@ export class Atom {
    */
   deref() {
     return this._ref;
+  }
+
+  /**
+   * Adds a new change listener to the store
+   * @param listener A callback function
+   */
+  addChangeListener(listener) {
+    this._listeners = this.listeners.push(listener)
   }
 
   /**
@@ -46,6 +55,9 @@ export class Atom {
       updated = true;
     }
     this._lock = false;
+    this._listeners.forEach((listener) => {
+      listener(this._ref)
+    });
     return updated;
   }
 
