@@ -56,7 +56,7 @@ export class Atom {
     }
     this._lock = false;
     this._listeners.forEach((listener) => {
-      listener(this._ref)
+      listener(this._ref);
     });
     return updated;
   }
